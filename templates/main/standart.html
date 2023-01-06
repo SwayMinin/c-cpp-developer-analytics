@@ -3,15 +3,30 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/92593837a3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <aside>
+        <h1>Аналитика профессии "C/C++ Разработчик"</h1>
+        <img src="{% static 'main/img/c_cpp_by_side.jpg' %}" alt="Си и си плюс плюс">
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-house" style="--fa-animation-duration: 0.5s;"></i>Главная</a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-column"></i>Востребованность</a></li>
+                <li><a href="#"><i class="fa-solid fa-map"></i>География</a></li>
+                <li><a href="#"><i class="fa-solid fa-book"></i>Навыки</a></li>
+                <li><a href="#"><i class="fa-solid fa-calendar-days"></i>Последние вакансии</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>

@@ -1,5 +1,5 @@
 body {
-    background: #F2E9DC;
+    background: #E7ECEF;
 }
 
 a {
@@ -7,21 +7,33 @@ a {
     text-decoration: none;
 }
 
-ul {
+header nav ul {
     list-style-type: none;
+    display: flex;
+    justify-content: space-between;
 }
 
-aside {
+header {
     float: left;
-    background: #386fa4;
-    width: 20%;
+    background: #210124;
+    width: 100%;
     padding: 2.5%;
-    height: 100vh;
     color: white;
-    border-right: 4px solid #133c55;
+    border-bottom: #750D37 5px;
 }
 
-aside img {
-    width: 100%;
-    padding: 0;
+header img {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    border-radius: 10%;
+}
+
+.project-name {
+    font-size: 50px;
+    text-align: center;
+}
+
+main .features {
+    text-align: center;
 }

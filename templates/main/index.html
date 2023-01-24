@@ -1,7 +1,13 @@
 {% extends 'main/standard.html' %}
 
 {% block content %}
-    <div class="features">
-        <p>Описание профессии</p>
+    {{ page_theme }}
+    <div class="description">
+        {% for block in description %}
+            <h3>{{ block.header }}</h3>
+            {% for paragraph in block.text %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+        {% endfor %}
     </div>
 {% endblock %}

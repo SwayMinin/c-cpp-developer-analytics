@@ -3,11 +3,11 @@ from django.db import models
 
 class TextBlock(models.Model):
     order = models.IntegerField('Порядковый номер', default=0)
-    header = models.CharField('Заголовок блока', max_length=50)
+    name = models.CharField('Заголовок блока', max_length=50)
     text = models.TextField('Текст блока')
 
     def __str__(self):
-        return self.header
+        return self.name
 
     class Meta:
         verbose_name = 'Блок'
@@ -15,8 +15,8 @@ class TextBlock(models.Model):
 
 
 class Row(models.Model):
-    name = models.CharField('Название строки', max_length=250, default='')
-    text = models.TextField('Текст строки')
+    name = models.CharField('Название', max_length=250, default='')
+    text = models.TextField('Текст')
 
     def __str__(self):
         return self.name
@@ -26,9 +26,22 @@ class Row(models.Model):
         verbose_name_plural = 'Строки'
 
 
+class Image(models.Model):
+    name = models.CharField(max_length=100)
+    path = models.ImageField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Изображение'
+        verbose_name_plural = 'Изображения'
+
+
 class Table(models.Model):
-    name = models.CharField('Название таблицы', max_length=250, default='')
+    name = models.CharField('Название', max_length=250, default='')
     rows = models.ManyToManyField(Row)
+    images = models.ManyToManyField(Image)
 
     def __str__(self):
         return self.name

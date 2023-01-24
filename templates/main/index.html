@@ -1,13 +1,18 @@
 {% extends 'main/standard.html' %}
 
 {% block content %}
-    {{ page_theme }}
-    <div class="description">
-        {% for block in description %}
-            <h3>{{ block.header }}</h3>
-            {% for paragraph in block.text %}
-                <p>{{ paragraph }}</p>
-            {% endfor %}
-        {% endfor %}
-    </div>
+    {% for block in blocks %}
+        <div class="container my-5">
+            <div class="row mx-4 p-3 pb-0 pe-lg-0 align-items-center rounded-3 border shadow-lg bg-light">
+                <div class="p-3 p-lg-5 pt-lg-3">
+                    <h2 class="display-6 fw-bold lh-1">{{ block.name }}</h2>
+                    {{ block.text|safe }}
+{#                    {% for paragraph in block.text %}#}
+{#                        <p class="lead">{{ paragraph|safe }}</p>#}
+{#                    {% endfor %}#}
+                </div>
+            </div>
+        </div>
+        <div class="b-example-divider"></div>
+    {% endfor %}
 {% endblock %}

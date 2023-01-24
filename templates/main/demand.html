@@ -2,39 +2,32 @@
 {% load static %}
 
 {% block content %}
-    <h3>{{ page_theme }}</h3>
     {% for table in tables %}
-        <table class="table table-sm table-hover table-bordered border-3 w-auto">
-        {% for row in table.content.all %}
-            <tr>
-                <th scope="col">{{ row.name }}</th>
-                {% for cell in row %}
-                    <td>{{ cell }}</td>
-                {% endfor %}
-            </tr>
+        <h3>{{ table.name }}</h3>
+        {% for image in table.images.all %}
+            <img src="{{ BASIC_DIR }}/media/{{image.path }}" alt="{{ image.name }}">
         {% endfor %}
-        </table>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <table class="table table-sm table-hover table-bordered border-3 w-auto align-start">
+                    <thead class="table-dark">
+                        <tr>
+                            {% for header in table.headers %}
+                                <th scope="col" class="align-middle">{{ header|safe }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in table.rows %}
+                            <tr>
+                                {% for cell in row %}
+                                    <td>{{ cell }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     {% endfor %}
-    <img src="{% static 'main/img/mean-salary.png' %}" alt="График средних зарплат">
-    <img src="{% static 'main/img/median-salary.png' %}" alt="График средних зарплат">
-    <table class="table table-sm table-hover table-bordered border-3 w-auto">
-        <thead class="table-dark">
-            {% for number in range %}
-            {% endfor %}
-            <tr>
-                {% for header in mean_table.headers %}
-                    <th scope="col">{{ header }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in mean_table.rows %}
-                <tr>
-                    {% for cell in row %}
-                        <td>{{ cell }}</td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 {% endblock %}

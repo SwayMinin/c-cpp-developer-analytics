@@ -1,5 +1,16 @@
+aside {
+    float: left;
+}
+
 body {
     background: #e7ecef;
+    text-align: center;
+}
+
+aside {
+    text-align: left;
+    position: absolute;
+    height: 100%;
 }
 
 a {
@@ -7,13 +18,16 @@ a {
     text-decoration: none;
 }
 
-header nav ul {
-    width: 50%;
+.fa-solid {
+    padding-right: 5px;
+}
+
+ul {
+/*    width: 50%;*/
     list-style-type: none;
-    /*display: flex;*/
-    padding: 0;
-    margin: 0 auto;
-    justify-content: space-between;
+/*    padding: 0;*/
+/*    margin: 0 auto;*/
+/*    justify-content: space-between;*/
 }
 
 header {
@@ -31,11 +45,22 @@ header img {
     width: 40%;
 }
 
+.description {
+    text-align: left;
+}
+
 .project-name {
     font-size: 50px;
     text-align: center;
 }
 
-main .features {
-    text-align: center;
+/*main .features {*/
+/*    text-align: center;*/
+/*}*/
+
+td:first-child {
+    font-weight: bold;
+}
+
+footer {
 }

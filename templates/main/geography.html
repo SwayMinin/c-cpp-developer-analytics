@@ -1,9 +1,5 @@
 {% extends 'main/standard.html' %}
-{% load static %}
 
 {% block content %}
-    <p>Таблицы и графики: Уровень зарплат по городам, Доля вакансий по городам</p>
-    <img src="{% static 'main/img/top-mean-cities.png' %}" alt="График уровня средних зарплат по городам">
-    <img src="{% static 'main/img/top-median-cities.png' %}" alt="График уровня медианных зарплат по городам">
-    <img src="{% static 'main/img/cities-share.png' %}" alt="График доли вакансий по городам">
+    {% include 'main/tables_layout.html' %}
 {% endblock %}

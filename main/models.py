@@ -1,19 +1,6 @@
 from django.db import models
 
 
-class TextBlock(models.Model):
-    order = models.IntegerField('Порядковый номер', default=0)
-    name = models.CharField('Заголовок блока', max_length=50)
-    text = models.TextField('Текст блока')
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Блок'
-        verbose_name_plural = 'Блоки'
-
-
 class Row(models.Model):
     name = models.CharField('Название', max_length=250, default='')
     text = models.TextField('Текст')
@@ -38,10 +25,24 @@ class Image(models.Model):
         verbose_name_plural = 'Изображения'
 
 
+class TextBlock(models.Model):
+    order = models.IntegerField('Порядковый номер', default=0)
+    name = models.CharField('Заголовок блока', max_length=50)
+    text = models.TextField('Текст блока')
+    image = models.ImageField(blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Блок'
+        verbose_name_plural = 'Блоки'
+
+
 class Table(models.Model):
     name = models.CharField('Название', max_length=250, default='')
     rows = models.ManyToManyField(Row)
-    images = models.ManyToManyField(Image)
+    images = models.ManyToManyField(Image, blank=True)
 
     def __str__(self):
         return self.name

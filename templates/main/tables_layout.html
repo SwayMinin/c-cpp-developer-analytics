@@ -1,0 +1,28 @@
+{% for table in tables %}
+    <h3>{{ table.name }}</h3>
+    {% for image in table.images.all %}
+        <img src="{{ BASIC_DIR }}/media/{{ image.path }}" alt="{{ image.name }}">
+    {% endfor %}
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <table class="table table-sm table-hover table-bordered border-3 w-auto align-start">
+                <thead class="table-dark">
+                    <tr>
+                        {% for header in table.headers %}
+                            <th scope="col" class="align-middle">{{ header|safe }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in table.rows %}
+                        <tr>
+                            {% for cell in row %}
+                                <td>{{ cell }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endfor %}

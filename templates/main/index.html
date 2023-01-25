@@ -1,15 +1,14 @@
 {% extends 'main/standard.html' %}
+{% load static %}
 
 {% block content %}
     {% for block in blocks %}
+        <img src="{{ BASIC_DIR }}/media/{{ block.image }}" width="1000px" class="rounded shadow" alt="{{ image.name }}">
         <div class="container my-5">
             <div class="row mx-4 p-3 pb-0 pe-lg-0 align-items-center rounded-3 border shadow-lg bg-light">
                 <div class="p-3 p-lg-5 pt-lg-3">
                     <h2 class="display-6 fw-bold lh-1">{{ block.name }}</h2>
                     {{ block.text|safe }}
-{#                    {% for paragraph in block.text %}#}
-{#                        <p class="lead">{{ paragraph|safe }}</p>#}
-{#                    {% endfor %}#}
                 </div>
             </div>
         </div>

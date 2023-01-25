@@ -1,11 +1,3 @@
-/*body {*/
-/*    overflow-x: hidden;*/
-/*}*/
-
-aside {
-    float: left;
-}
-
 body {
     background: #e7ecef;
     text-align: center;
@@ -27,31 +19,7 @@ a {
 }
 
 ul {
-/*    width: 50%;*/
     list-style-type: none;
-/*    padding: 0;*/
-/*    margin: 0 auto;*/
-/*    justify-content: space-between;*/
-}
-
-header {
-    float: left;
-    background: #1d1129;
-    width: 100%;
-    padding: 2.5%;
-    color: white;
-    /*border-right: #750d37 5px;*/
-}
-
-header img {
-    display: block;
-    margin: 0 auto;
-    width: 40%;
-}
-
-table {
-  table-layout: fixed ;
-  width: 100% ;
 }
 
 td {

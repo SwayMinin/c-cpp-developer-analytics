@@ -1,5 +1,8 @@
 {% extends 'main/standard.html' %}
+{% load static %}
 
 {% block content %}
-    <p>Краткое описание</p>
+    <p class="display-6 lh-1">Здесь пусто поэтому будут мемы</p>
+    <img src="{% static 'main/img/meme1.jpg' %}" width="1000px" class="rounded shadow m-4" alt="Мем 1">
+    <img src="{% static 'main/img/meme2.png' %}" width="500px" class="rounded shadow m-4" alt="Мем 2">
 {% endblock %}
